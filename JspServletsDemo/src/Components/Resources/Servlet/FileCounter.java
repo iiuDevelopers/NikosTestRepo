@@ -37,12 +37,12 @@ public class FileCounter extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession httpsession = request.getSession(true) ; 
 		httpsession.setMaxInactiveInterval(5) ; 
-		response.setContentType("text/plain") ;
+		response.setContentType("text/html") ;
 		PrintWriter out  = response.getWriter() ;
 		if(httpsession.isNew()){
 			count++ ; 
 		}
-		out.println("This site has been accessed " + count + " times.");
+		out.println("<h1>This site has been accessed </h1>" + count + " times.");
 	}
 	public void  destroy(){
 		super.destroy() ;
